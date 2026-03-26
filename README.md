@@ -1,6 +1,7 @@
 # Linux-Shell
 
-A sample command-line interpreter developed for Linux systems.
+A command prompt interpreter developed for Linux systems.
+Supports concurrent process execution.
 \
 \
 _Tested on Ubuntu 20.04.1 LTS._
