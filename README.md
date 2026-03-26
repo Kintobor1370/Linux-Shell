@@ -1,6 +1,7 @@
 # Linux-Shell
 
-A command prompt interpreter developed for Linux systems.\\
+A command prompt interpreter developed for Linux systems.
+
 Supports concurrent process execution.
 \
 \
