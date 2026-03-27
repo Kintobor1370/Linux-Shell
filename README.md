@@ -1,23 +1,21 @@
-# Linux-Shell
+# Linux Shell
 
-An interactive command prompt interpreter developed for Linux systems.
+An interactive Linux shell implementation supporting concurrent process execution and a range of standard command operators.
 
-Supports concurrent process execution.
+__Supported features:__
+- Read data from a file: ```< filename```
+- Write data to a file, erasing its previous contents: ```> filename```
+- Write data to the end of the file: ```>> filename```
+- Background process execution: ```process &```
+- Conditional execution:
+    - ``` command_1 && command_2 ```: execute the second command on success of the first one
+    - ``` command_1 ││ command_2 ```: execute the second command on failure of the first one
+- Pipeline: ``` process_1 │ process_2 │ ... │ process_n ``` <br> The output of each process serves as input for the next process. The output of the final process is standard.
 
-This interpreter supports the following operators:
-
-1. '<'  - read from file
-2. '>'  - write to file, erasing its previous contents
-3. '>>' - write to the end of file
-4. '&' - execute the command as a background process
-5. '&&' (e.g.: _command\_1 && command\_2_) - execute the second command only after the successful execution of the first command
-6. '││' (e.g.: _command\_1 ││ command\_2_) - execute the second command only in case of an error in the execution of the first command
-7. '│' (e.g.: _process\_1 │ process\_2 │ ... │ process\_n_) - process conveyor: the output of each process serves as input for the next process. The output of the final process is standard.
-
-The operator priority is as follows:
-1. _│_, _>_, _>>_, _<_
-2. _&&_, _││_
-3. _;_, _&_
+__Operator precedence:__
+1. ```│```, ```>```, ```>>```, ```<```
+2. ```&&```, ```││```
+3. ```;```, ```&```
 
 The parsing algorithm of the interpreter is as follows:
 ![CommandPrompt](https://github.com/user-attachments/assets/20f29762-fce3-4cd3-9e0a-80dece2f5739)
@@ -39,7 +37,7 @@ The parsing algorithm of the interpreter is as follows:
 \
 _Tested on Ubuntu 20.04.1 LTS._
 
-To run the interpreter:
+# To run the interpreter on Ubuntu:
 1. Launch the terminal from the folder containing the _Shell.c_ file.
 3. Input the following lines:
 ```
