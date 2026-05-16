@@ -2,7 +2,7 @@
 
 An interactive Linux shell implementation supporting concurrent process execution and a range of standard command operators.
 
-__Supported features:__
+## Supported features
 - Read data from a file: ```< filename```
 - Write data to a file, erasing its previous contents: ```> filename```
 - Write data to the end of the file: ```>> filename```
@@ -12,12 +12,12 @@ __Supported features:__
     - ``` command_1 ││ command_2 ```: execute the second command on failure of the first one
 - Pipeline: ``` process_1 │ process_2 │ ... │ process_n ``` <br> The output of each process serves as input for the next process. The output of the final process is standard.
 
-__Operator precedence:__
+## Operator precedence:
 1. ```│```, ```>```, ```>>```, ```<```
 2. ```&&```, ```││```
 3. ```;```, ```&```
 
-The parsing algorithm of the interpreter is as follows:
+## Parsing algorithm:
 ![CommandPrompt](https://github.com/user-attachments/assets/20f29762-fce3-4cd3-9e0a-80dece2f5739)
 
 ![ConditionalCommand](https://github.com/user-attachments/assets/06ae652d-255a-4428-8d44-5ec554ea55f8)
@@ -33,11 +33,8 @@ The parsing algorithm of the interpreter is as follows:
 ![Conveyor](https://github.com/user-attachments/assets/bfdb6bf0-63a9-4e7a-98fe-99574801d587)
 
 ![SimpleCommand](https://github.com/user-attachments/assets/a121e756-6bf2-47a5-a110-acfd7b547d26)
-\
-\
-_Tested on Ubuntu 20.04.1 LTS._
 
-# To run the interpreter on Ubuntu:
+# To run the interpreter:
 1. Launch the terminal from the folder containing the _Shell.c_ file.
 3. Input the following lines:
 ```
@@ -46,3 +43,4 @@ gcc Shell.c -o Shell
 ```
 ./Shell
 ```
+_Tested on Ubuntu 20.04.1 LTS._
